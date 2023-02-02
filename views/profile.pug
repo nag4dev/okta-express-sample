@@ -1,7 +1,5 @@
-extends layout
-
 block content
-  h2= "My Profile"
+  h2= "Happy to have you here!!"
   br
   div
     p Hello, #{user.displayName}. Below is the information that was read with your #[a(href="https://developer.okta.com/docs/api/resources/oidc.html#get-user-information", target="_blank") Access Token].
@@ -9,9 +7,22 @@ block content
   table.table.table-striped
     thead 
       tr 
+        th Profile Attribute
+        th Value 
+    tbody 
+      tr
+        td user.realmId
+        td #{user.realmId}
+  
+  table.table.table-striped
+    thead 
+      tr 
         th Claim 
         th Value 
     tbody 
+      tr
+        td user.realmId
+        td #{user.realmId}
     for values, claims in user
       tr 
         td #{claims}
