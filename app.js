@@ -102,6 +102,7 @@ app.use('/authorization-code/callback',
 );
 
 app.use('/profile', ensureLoggedIn, (req, res) => {
+  console.log("User Info: "+JSON.stringify(req.user));
   res.render('profile', { authenticated: req.isAuthenticated(), user: req.user });
 });
 
