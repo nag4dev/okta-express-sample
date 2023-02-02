@@ -1,7 +1,18 @@
-extends layout
-
+doctype html
+html
+  head
+    title= "Okta Redirect Flow With Express"
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+  body#samples
+    nav.navbar.navbar-default
+      div.container-fluid
+        ul.nav.navbar-nav
+          a(href="/")
+            img(src="https://www.okta.com/sites/default/files/Okta_Logo_BrightBlue_Medium.png", height="50", style="padding: 10px;")
 block content
-  h2= "Okta Redirect Flow + Express"
+  h2= "Welcome to Collaboration App"
   if authenticated
     br
     div
@@ -11,6 +22,5 @@ block content
   else
     br
     div
-      p If you're viewing this page then you have successfully configured and started this example server.
-      p This example shows you how to to add the #[a(href="https://developer.okta.com/authentication-guide/implementing-authentication/auth-code.html") Redirect Flow] to your Express application.
-      p When you click the login button, you will be redirected to the login page on your Okta org.
+      form.navbar-form.navbar-right(method="get", action="/login")
+            button#login-button.btn.btn-primary(type="submit") Login    
